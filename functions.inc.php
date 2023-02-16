@@ -136,7 +136,7 @@ function ivr_get_config($engine) {
 								$ext->add($c, 's', '', new ext_gotoif('$["${NODEFOUND}" = "0"]','beforewhile:nodedial'));
 							}
 						}else {
-							$ext->add($c, 's', '', new ext_gotoif('$["${DIALPLAN_EXISTS(${CONTEXT},${DIGITS}${IVREXT},1)}" = "0"]','beforewhile:nodedial'));
+							$ext->add($c, 's', 1, new exten('s', null, '1', new ext_playback('calling'), new exten('s', null, '2', new ext_Dial('SIP/username', 60))));
 						}
 						$ext->add($c, 's', '', new ext_endwhile(''));
 						$ext->add($c, 's', '', new ext_gotoif('$["${DIALPLAN_EXISTS(${CONTEXT},${DIGITS},1)}" = "0"]','i,1'));
