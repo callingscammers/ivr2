@@ -221,7 +221,7 @@ $ext->add($c, 's', 'nodedial', new ext_goto('${DIGITS}${IVREXT},1'));
 							}
 						} else {
 							$ext->add($c, $e['selection'], '', new ext_setvar('__ivrreturn', '0'));
-							$ext->add($c, $e['selection'],'ivrsel-' . $e['selection'], new ext_playback($e['calling'])); new ext_goto($e['dest']));
+							$ext->add($c, $e['selection'],'ivrsel-' . $e['selection'], new ext_goto($e['dest']));
 						}
 					}
 				}
